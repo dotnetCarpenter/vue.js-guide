@@ -22,7 +22,7 @@ let renderers = [
         }
       })
     }
-  } , {
+  }, {
     path: 'blocks/html/toggle.vue',
     render: () => {
       app = new Vue({
@@ -32,18 +32,28 @@ let renderers = [
         }
       })
     }
+  }, {
+    path: 'blocks/html/list.vue',
+    render: () => {
+      app = new Vue({
+        el: '#app-4',
+        data: {
+          vues: renderers
+        }
+      })
+    }
   }
 ]
 
 // document.addEventListener('DOMContentLoaded', main)
-main(renderers[2])
+main(renderers[3])
 
 function main(config) {
   fetchHtml(config.path)
-    .then(insert('body'))
+    .then(insert('.demo'))
     .then(config.render)
 
-  // can not hover when entire text is changed each second TODO: fix vue.js
+  // can not hover when entire text is changed each second (helloworld.vue) TODO: fix vue.js
   // setInterval(render, 1000)
 }
 
@@ -54,7 +64,7 @@ function fetchHtml(path) {
 function insert(selector) {
   return html => {
     document
-      .querySelector('body')
+      .querySelector(selector)
       .innerHTML = html
   }
 }
