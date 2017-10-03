@@ -42,11 +42,36 @@ let renderers = [
         }
       })
     }
+  }, {
+    path: 'blocks/html/reverse.vue',
+    render: () => {
+      app = new Vue({
+        el: '#app-5',
+        data: {
+          message: 'Hello Vue.js!'
+        },
+        methods: {
+          reverseMessage: function () {
+            this.message = this.message.split('').reverse().join('')
+          }
+        }
+      })
+    }
+  }, {
+    path: 'blocks/html/two-way-binding.vue',
+    render: () => {
+      app = new Vue({
+        el: '#app-6',
+        data: {
+          message: 'Hello Vue!'
+        }
+      })
+    }
   }
 ]
 
 // document.addEventListener('DOMContentLoaded', main)
-main(renderers[3])
+main(renderers[renderers.length-1])
 
 function main(config) {
   fetchHtml(config.path)
