@@ -1,3 +1,6 @@
 <div id="app-3">
-  <span v-if="seen" v-on:click="seen=false" style="cursor:pointer;">Now you see me</span>
+  <button v-on:click="seen = !seen">Toggle</button>
+  <transition name="fade">
+    <span v-if="seen">Now you see me</span>
+  </transition>
 </div>
