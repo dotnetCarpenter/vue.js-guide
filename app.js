@@ -53,7 +53,7 @@ function main(config) {
     .then(insert('.demo'))
     .then(config.render)
 
-  // can not hover when entire text is changed each second (helloworld.vue) TODO: fix vue.js
+  // can not hover when entire text is changed each second (binding.vue) TODO: fix vue.js
   // setInterval(render, 1000)
 }
 
