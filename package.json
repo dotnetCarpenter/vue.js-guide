@@ -11,6 +11,6 @@
     "ecstatic": "^3.0.0"
   },
   "dependencies": {
-    "npm": "^5.4.2"
+    "vue": "^2.4.4"
   }
 }
