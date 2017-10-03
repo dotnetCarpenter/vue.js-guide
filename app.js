@@ -1,15 +1,18 @@
 'use strict'
 
+let app
+
+// document.addEventListener('DOMContentLoaded', main)
 main()
 
 function main() {
   fetchHtml('blocks/html/helloworld.vue')
-    .then(insert)
+    .then(insert('body'))
     .then(render)
 }
 
 function fetchHtml(path) {
-  return fetch(path).then(resp => resp.text())
+  return window.fetch(path).then(resp => resp.text())
 }
 
 function insert(selector) {
@@ -21,7 +24,7 @@ function insert(selector) {
 }
 
 function render() {
-  let app = new Vue({
+  app = new Vue({
     el: '#app',
     data: {
       message: 'Hello Vue!'
