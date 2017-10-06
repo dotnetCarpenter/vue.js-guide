@@ -1,3 +1,3 @@
 [submodule "vue-2.0-simple-routing-example"]
 	path = vue-2.0-simple-routing-example
-	url = git@github.com:chrisvfritz/vue-2.0-simple-routing-example.git
+	url = git@github.com:dotnetCarpenter/vue-2.0-simple-routing-example.git
